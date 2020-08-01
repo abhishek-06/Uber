@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context=".DriverLoginActivity" >
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="#AB000000"
+                android:textColor="#FFFFFF"
+                android:layout_weight="1"
+                android:text="logout"
+                android:textStyle="bold|italic"/>
+
+            <Button
+                android:id="@+id/history"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="#AB000000"
+                android:textColor="#FFFFFF"
+                android:layout_weight="1"
+                android:text="history"
+                android:textStyle="bold|italic"/>
+
+            <Button
+                android:id="@+id/settings"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="#AB000000"
+                android:textColor="#FFFFFF"
+                android:layout_weight="1"
+                android:text="Settings"
+                android:textStyle="bold|italic"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttons"
+            android:layout_margin="20sp">
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <!--android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/driverInfo"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:background="@android:color/white"
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:id="@+id/driverProfileImage"
+                android:src="@drawable/ic_default"
+                android:padding="20sp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="40sp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/driverName"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/driverPhone"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/driverCar"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp"/>
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ratingBar"
+                    android:layout_gravity="center"
+                    android:numStars="5"
+                    android:stepSize="0.1"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioGroup"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/UberX"
+                    android:layout_width="137dp"
+                    android:layout_height="wrap_content"
+                    android:text="UberX"
+                    android:buttonTint="#FFFFFF"
+                    android:background="#D0615B5B"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold|italic"/>
+
+                <RadioButton
+                    android:id="@+id/UberBlack"
+                    android:layout_width="137dp"
+                    android:layout_height="wrap_content"
+                    android:text="UberBlack"
+                    android:buttonTint="#FFFFFF"
+                    android:background="#D0615B5B"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold|italic" />
+
+                <RadioButton
+                    android:id="@+id/UberXl"
+                    android:layout_width="137dp"
+                    android:layout_height="wrap_content"
+                    android:text="UberXl"
+                    android:buttonTint="#FFFFFF"
+                    android:background="#D0615B5B"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold|italic"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#AB000000"
+                android:text="call Uber"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold|italic"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</FrameLayout>

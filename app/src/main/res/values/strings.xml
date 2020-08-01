@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Uber</string>
+    <string name="i_am_a_driver">I\'am a Driver</string>
+    <string name="i_am_a_Customer" />
+    <string name="i_am_a_Driver" />
+    <string name="title_activity_driver_map">Map</string>
+    <string name="history">History</string>
+</resources>
